@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Url do projeto: https://github.com/eulerv/portfolio-website-v2

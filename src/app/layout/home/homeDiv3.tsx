@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GithubIcon } from "lucide-react";
 
 export default function HomeDiv3() {
   return (
@@ -21,17 +20,12 @@ export default function HomeDiv3() {
           Python, C++, machine learning, nlp
         </h1>
         <p className="mb-6">
-          E enfim, gosto de desafios, de aprender coisas novas, e só preciso de
-          uma oportunidade para demonstrar :D
+          E enfim, gosto de desafios, de aprender coisas novas, a curiosidade nos trouxe até aqui não é mesmo? :D
           <br />
-        </p>
-        <p className="mb-6">
-          Ps: Sei que este front é bem básico mesmo, como me dedico ao backend,
-          adoraria sugestões de melhorias! Se deseja contribuir melhorando esse
-          front, pode clicar no ícone do Github lá na navbar, fico extremamente
-          grato a quem quiser ajudar no meu crescimento.
+          Ah, e resido orgulhosamente na cidade de Igrejinha no RS.
           <br /> <br />
         </p>
+
         <h2 className="pb-2 text-xl font-semibold">Cheers!</h2>
       </motion.div>
       <motion.div
@@ -44,33 +38,41 @@ export default function HomeDiv3() {
         whileInView={{ opacity: 1, x: 0 }}
       >
         <div>
-          <div className="flex flex-row">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-6 font-consolas">
             <div className="flex flex-col w-full text-left">
               <h2 className="pb-2 text-xl font-semibold">
                 Clique para ir até a aba de
               </h2>
               <a
                 href="/contato"
-                className="flex-grow-0 text-4xl font-bold md:text-6xl 2xl:text-8xl ml-8"
+                className="flex-grow-0 text-4xl font-bold md:text-8xl 2xl:text-8xl"
               >
                 <h1 className="absolute blur-[30px] text-slate-50 translate-x-1 translate-y-1">
-                  Contato
+                Contato
                 </h1>
                 Contato
               </a>
             </div>
-            <div className="flex flex-row">
-              <a href="/github"
-              >
-                <GithubIcon className="w-[50px]"/>
+            <div className="flex justify-center">
+              <a
+                href="https://github.com/eulerv/portfolio-website-v2"
+                target="_blank"
+              >pode ter conteudo aqui
               </a>
             </div>
           </div>
-          <p className="my-6">
+          <p className="my-6 font-consolas">
             Assim podemos conversar via e-mail ou Whatsapp. Você também pode me
             contactar pelo linkedin nos ícones no topo da página, estão também
-            na página de contato. Ps: Sei que este front é bem básico mesmo,
-            como me dedico ao backend, adoraria sugestões de melhorias! Cheers!
+            na página de contato.
+            
+              Ps: Sei que este front é bem básico mesmo, como me dedico ao
+              backend, adoraria sugestões de melhorias! Se deseja contribuir
+              melhorando esse front, pode enviar mensagens pelas redes, ou clicar no ícone do Github lá na
+              navbar para conferir o repo, fico extremamente grato a quem quiser ajudar no meu
+              crescimento.
+              <br /> <br />
+            
             <br />
           </p>
         </div>
@@ -86,7 +88,7 @@ export default function HomeDiv3() {
            flex items-center justify-center divide-x divide-gray-600
            "
           >
-            <span className="text-gray-100 flex items-center space-x-5 pr-6">
+            <span className="text-gray-100 font-inter flex items-center space-x-5 pr-6">
               Clique para fazer o download do meu currículo atualizado
             </span>
           </button>

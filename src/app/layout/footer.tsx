@@ -3,8 +3,8 @@
 const Footer: React.FC = () => {
   return (
     <footer
-      className="bg-zinc-800 border-t border-zinc-200 px-6 rounded-t-3xl
-    md:h-16 h-8 w-full justify-center align-middle flex flex-center mt-8 xl:mt-auto
+      className="bg-zinc-800 border-t border-zinc-200 px-6 rounded-t-xl
+    md:h-16 h-8 w-full justify-center align-middle flex flex-center mt-32 lg:mt-8 xl:mt-auto
     ">
       <div>
         <p className="text-gray-200 md:text-md text-xs">

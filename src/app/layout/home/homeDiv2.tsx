@@ -21,7 +21,8 @@ export default function HomeDiv2() {
           transition={{ type: "tween", stiffness: 50, duration: 3 }}
           whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
         >
-          <div className="relative text-6xl font-bold md:mb-20 mb-10 text-black">
+          <div className="relative font-consolas text-6xl font-bold md:mb-20 mb-10 text-white">
+          <div className="absolute font-consolas whitespace-nowrap -translate-x-[50%] left-1/2 sm:text-6xl sm:text-emerald-850 blur z-[-1]">Skills e Estudos</div> 
             Skills e Estudos
           </div>
         </motion.div>
@@ -51,7 +52,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <Coffee />
               <h3 className="mb-4 mt-2 text-base font-semibold">Java Core</h3>
               <p className="mb-4 text-sm font-light leading-[175%]">
@@ -72,7 +73,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <Braces />
               <h3 className="mb-4 mt-2 text-base font-semibold">
                 JavaScript e React
@@ -95,7 +96,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <DatabaseZap />
               <h3 className="mb-4 mt-2 text-base font-semibold">MySQL</h3>
               <p className="mb-4 text-sm font-light leading-[175%]">
@@ -117,7 +118,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <Shell />
               <h3 className="mb-4 mt-2 text-base font-semibold">
                 Java Streams
@@ -140,7 +141,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <Truck />
               <h3 className="mb-4 mt-2 text-base font-semibold">
                 Spring Batch
@@ -163,7 +164,7 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-black bg-zinc-50 p-8">
+            <div className="rounded-[30px] border border-black bg-zinc-50 bg-opacity-90 p-8 shadow-lg shadow-black"> 
               <Speech />
               <h3 className="mb-4 mt-2 text-base font-semibold">Soft Skills</h3>
               <p className="mb-4 text-sm font-light leading-[175%]">

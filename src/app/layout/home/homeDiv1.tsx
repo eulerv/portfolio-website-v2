@@ -17,8 +17,8 @@ const HomeDiv1: React.FC = () => {
           Euler Vicente
         </h1>
         <p className="mb-6 text-pretty tracking-tight">
-          Sou um desenvolvedor back end Java, gosto muito dessa linguagem ,e
-          apesar de ter conhecimento em outras tecnologias, busco constante
+          Sou um desenvolvedor back end Java, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
+          e apesar de ter conhecimento em outras tecnologias, busco constante
           aprimoramento e especializa&ccedil;&atilde;o nela. Este &eacute; meu
           portfolio. <br /> <br />
           <span className="italic tracking-tight">
