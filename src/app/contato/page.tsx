@@ -1,18 +1,18 @@
 "use client";
 
 import Footer from "../layout/footer";
-import Gradients from "../layout/home/gradients";
+import GradientsOnePage from "../layout/home/gradientsOnePage";
 import HomeDiv3 from "../layout/home/homeDiv3";
 import Navbar from "../layout/menus/navbar";
 
 export default function Home() {
   return (
-    <div className="relative w-full overflow-hidden">
-      <div className="absolute items-top w-full">
+    <div className="w-full overflow-hidden">
+      <div className="items-top w-full">
         <Navbar />
       </div>
       <div className="absolute z-[-1] min-w-full">
-        <Gradients />
+        <GradientsOnePage />
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col">

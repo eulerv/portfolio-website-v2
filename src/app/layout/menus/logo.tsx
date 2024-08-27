@@ -26,7 +26,7 @@ const Logo: React.FC = () => {
   return (
     <a
       href="/"
-      className="w-full font-consolas tracking-tighter text-zinc-50 flex flex-col items-center font-bold"
+      className="w-full font-aleo tracking-tighter text-zinc-50 flex flex-col items-center font-bold"
     >
       <motion.div
         className="items-center font-extrabold text-4xl sm:w-full"

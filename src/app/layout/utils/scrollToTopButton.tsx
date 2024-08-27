@@ -29,7 +29,7 @@ const ScrollToTopButton: React.FC = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-5 z-50 p-3 bg-highlightButton text-white rounded-full shadow-lg transition-opacity duration-3000 hover:bg-highlightButton focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+          className="fixed bottom-6 right-5 z-50 p-3 hover:scale-[120%] bg-highlight text-white rounded-full shadow-lg transition-opacity duration-3000 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
         >
           <ChevronUp className="w-6 h-6" />
         </button>

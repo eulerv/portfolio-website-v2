@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { motion } from "framer-motion";
 
@@ -6,7 +7,8 @@ const HomeDiv1: React.FC = () => {
     <div className="h-auto min-h-screen w-fit overflow-hidden px-2 lg:px-20 flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-8">
       <motion.div
         className="lg:w-1/2 lg:mt-0 mt-6 lg:mx-auto mx-8 p-4 lg:p-10 border-2 border-black
-         bg-zinc-50 bg-opacity-80 text-center font-consolas lg:text-left shadow-lg rounded-md shadow-secondary"
+        bg-quaternary bg-opacity-90 
+         text-center font-aleo lg:text-left shadow-lg rounded-md shadow-black"
         viewport={{ once: true, amount: 0.5 }}
         initial={{ opacity: 0, x: -20, y: -100 }}
         transition={{ type: "spring", stiffness: 50, duration: 7}}

@@ -11,7 +11,7 @@ const config: Config = {
       fontFamily: {
         carlito: ["Carlito", "monospace"],
         lato: ["Lato", "sans-serif"],
-        aleo: ["Aleo"],
+        aleo: ["Aleo", "monospace"],
         roslindale: ["Roslindale", "condensed"],
         consolas: ["Consolas", "monospace"],
         inter: ["Inter", "sans"],
@@ -19,14 +19,14 @@ const config: Config = {
       },
     },
     colors: {
-      primary: '#262526',
-      secondary: '#0F1626',
-      tertiary: '#BCAD95',
-      quaternary: '#F2F2F2',
-      quinary: '#3871A6',
-      black: '#000000',
-      white: '#FFFFFF',
-      highlightButton: '#9B1C1C',
+      primary: '#202326', // Cinza escuro
+      secondary: '#065f46', // Emerald
+      tertiary: '#BCAD95', // Areia
+      quaternary: '#F2F2F2', // Branco Off White
+      quinary: '#3871A6', // Azul Turquesa
+      black: '#000000', // Totalmente preto
+      white: '#FFFFFF', // Totalmente branco
+      highlight: '#9B1C1C', // Vermelho forte de Destaque
 
       slate: {
         50: "#f8fafc",

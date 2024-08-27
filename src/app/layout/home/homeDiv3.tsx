@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 
 export default function HomeDiv3() {
@@ -7,7 +5,7 @@ export default function HomeDiv3() {
     <div className="min-h-screen overflow-hidden px-2 lg:px-20 flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-8 text-white">
       <motion.div
         className="lg:w-1/2 lg:mt-0 mt-6 lg:mx-auto mx-8 p-4 lg:p-10
-        border-2 border-black bg-zinc-50 bg-opacity-[4%] text-center lg:text-left font-consolas shadow-lg rounded-md shadow-secondary"
+        border-2 border-black bg-zinc-50 bg-opacity-[4%] text-center lg:text-left font-aleo shadow-lg rounded-md shadow-black"
         viewport={{ once: true, amount: 0.5 }}
         initial={{ opacity: 0, x: 0, y: 0, filter: "blur(25px)" }}
         transition={{ type: "tween", stiffness: 50, duration: 3 }}
@@ -31,14 +29,14 @@ export default function HomeDiv3() {
       <motion.div
         className="flex flex-col lg:w-1/2 lg:mt-0 mt-6 lg:mx-auto mx-8 p-4 lg:p-10 
         border-2 border-black bg-black bg-opacity-80 text-center lg:text-left font-aleo 
-        shadow-lg rounded-md shadow-secondary lg:justify-start text-white"
+        shadow-lg rounded-md shadow-white lg:justify-start text-white"
         viewport={{ once: true, amount: 0.1 }}
         initial={{ opacity: 0, x: 100 }}
         transition={{ type: "spring", stiffness: 50, duration: 1.5 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
         <div>
-          <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-6 font-consolas">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-6 font-aleo">
             <div className="flex flex-col w-full text-left">
               <h2 className="pb-2 text-xl font-semibold">
                 Clique para ir até a aba de
@@ -61,7 +59,7 @@ export default function HomeDiv3() {
               </a>
             </div>
           </div>
-          <p className="my-6 font-consolas">
+          <p className="my-6 font-aleo">
             Assim podemos conversar via e-mail ou Whatsapp. Você também pode me
             contactar pelo linkedin nos ícones no topo da página, estão também
             na página de contato.
@@ -88,7 +86,7 @@ export default function HomeDiv3() {
            flex items-center justify-center divide-x divide-gray-600
            "
           >
-            <span className="text-gray-100 font-inter flex items-center space-x-5 pr-6">
+            <span className="text-gray-100 font-aleo flex items-center space-x-5 pr-6">
               Clique para fazer o download do meu currículo atualizado
             </span>
           </button>

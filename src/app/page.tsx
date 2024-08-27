@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col">
         <ScrollToTopButton />
-        <div className="flex flex-col divide-y divide-slate-800">
+        <div className="flex flex-col">
           {/* Seção 1 */}
           <div className="mt-20 items-center w-full">
             <HomeDiv1 />

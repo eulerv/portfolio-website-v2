@@ -25,7 +25,7 @@ export default function Home() {
                 className="xl:col-span-3 flex flex-col px-4 py-3
               lg:mt-0 lg:mx-auto lg:px-6 lg:py-5 lg:text-left 
               border-2 border-black
-              bg-emerald-500 bg-opacity-60 text-center font-aleo shadow-lg rounded-md shadow-secondary"
+              bg-emerald-500 bg-opacity-60 text-center font-aleo shadow-lg rounded-md shadow-black"
                 viewport={{ once: true, amount: 0.5 }}
                 initial={{ opacity: 0, x: 0, y: 100 }}
                 transition={{ type: "spring", stiffness: 50, duration: 7 }}
@@ -61,7 +61,7 @@ export default function Home() {
                 className="flex flex-col px-4 py-3
               lg:mt-0 lg:mx-auto lg:px-6 lg:py-5 lg:text-left 
               border-2 border-black
-              bg-zinc-50 bg-opacity-80 text-center font-operator shadow-lg rounded-md shadow-secondary"
+              bg-zinc-50 bg-opacity-80 text-center font-operator shadow-lg rounded-md shadow-black"
                 viewport={{ once: true, amount: 0.5 }}
                 initial={{ opacity: 0, x: 0, y: 100 }}
                 transition={{ type: "spring", stiffness: 50, duration: 7 }}

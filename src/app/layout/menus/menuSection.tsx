@@ -11,12 +11,12 @@ const MenuSection: React.FC = () => {
         sm:pt-4
         sm:px-2
         h-10
-        font-lato
+        font-operator
         text-sm
         text-zinc-400
         items-center
         self-center
-        gap-2
+        gap-3
         leading-tight
         "
     >

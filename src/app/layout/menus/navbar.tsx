@@ -28,10 +28,10 @@ const Navbar: React.FC = () => {
         <a href="https://www.linkedin.com/in/vicenteeuler" target="_blank">
           <Linkedin className="size-10 text-slate-200 hidden md:block" />
         </a>
-        <a href="https://github.com/eulerv/portfolio-website-v2" target="_blank">
+        <a href="https://github.com/eulerv/" target="_blank">
           <GithubIcon className="size-10 text-slate-200 hidden lg:block" />
         </a>
-        <a href="https://github.com/eulerv/portfolio-website-v2" target="_blank">
+        <a href="https://github.com/eulerv/" target="_blank">
         <MenuIcon className="size-10 text-slate-200 block md:hidden" />
         </a>
       </div>
