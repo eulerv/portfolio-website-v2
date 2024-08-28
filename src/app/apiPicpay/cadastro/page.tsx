@@ -1,14 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import GradientsProjects from "../../layout/home/gradientsProjects";
 import Navbar from "../../layout/menus/navbar";
 import Sidebar from "../../layout/menus/sidebar";
-import InputForm from "./InputForm";
-import RequestCard from "./requestCard";
-import ResponseCard from "./responseCard";
+import InputForm from "./components/InputForm";
+import RequestCard from "./components/requestCard";
+import ResponseCard from "./components/responseCard";
 
 export default function Home() {
+
+  const [formData, setFormData] = useState({
+    input1: "",
+    input2: "",
+    input3: "",
+  });
+
   return (
     <div className="flex flex-col">
       <Navbar />
@@ -29,8 +37,8 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0, y: 0 }}
           >
             <div className="grid lg:grid-cols-2 lg:justify-left gap-12">
-              <InputForm />
-              <RequestCard />
+            <InputForm setFormData={setFormData}/>
+            <RequestCard formData={formData} />
             </div>
             <div className="lg:grid-cols-2 lg:justify-left gap-12">
               <ResponseCard />
