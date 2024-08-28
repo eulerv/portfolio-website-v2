@@ -8,7 +8,7 @@ export default function InputForm({
   setFormData,
 }: {
   setFormData: React.Dispatch<
-    React.SetStateAction<{ input1: string; input2: string; input3: string }>
+    React.SetStateAction<{ input1: string; input2: string; input3: string; input4: string; input5: string; input6: string }>
   >;
 }) {
   const [localFormData, setLocalFormData] = useState({
