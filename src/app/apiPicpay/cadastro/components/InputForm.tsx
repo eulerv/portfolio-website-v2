@@ -8,7 +8,14 @@ export default function InputForm({
   setFormData,
 }: {
   setFormData: React.Dispatch<
-    React.SetStateAction<{ input1: string; input2: string; input3: string; input4: string; input5: string; input6: string }>
+    React.SetStateAction<{
+      input1: string;
+      input2: string;
+      input3: string;
+      input4: string;
+      input5: string;
+      input6: string;
+    }>
   >;
 }) {
   const [localFormData, setLocalFormData] = useState({
@@ -22,7 +29,28 @@ export default function InputForm({
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setFormData(localFormData); // Passa o objeto de dados para o componente Home
+
+    // Remover a pontuação do CPF
+    const formattedCPF = localFormData.input2.replace(/\D/g, '');
+
+    // Remover a máscara de moeda e ajustar o formato do saldo
+    const formattedBalance = parseFloat(
+      localFormData.input6.replace(/[^\d,]/g, '').replace(',', '.')
+    ).toFixed(2);
+
+    // Atualizar o estado local com os valores formatados
+    setLocalFormData((prevData) => ({
+      ...prevData,
+      input2: formattedCPF,
+      input6: formattedBalance,
+    }));
+
+    // Passa o objeto de dados formatado para o componente Home
+    setFormData({
+      ...localFormData,
+      input2: formattedCPF,
+      input6: formattedBalance,
+    });
   };
 
   const handleChange = (e: any) => {
@@ -40,7 +68,7 @@ export default function InputForm({
           <h1 className="text-2xl">POST</h1>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
-          <form className="w-full mt-4">
+          <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
               htmlFor="nome"
@@ -57,9 +85,9 @@ export default function InputForm({
               value={localFormData.input1}
               onChange={handleChange}
             />
-          </form>
+          </div>
 
-          <form className="w-full mt-4">
+          <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
               htmlFor="cpf"
@@ -76,9 +104,9 @@ export default function InputForm({
               value={localFormData.input2}
               onChange={handleChange}
             />
-          </form>
+          </div>
 
-          <form className="w-full mt-4">
+          <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
               htmlFor="email"
@@ -95,8 +123,8 @@ export default function InputForm({
               value={localFormData.input3}
               onChange={handleChange}
             />
-          </form>
-          <form className="w-full mt-4">
+          </div>
+          <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
               htmlFor="password"
@@ -113,48 +141,39 @@ export default function InputForm({
               value={localFormData.input4}
               onChange={handleChange}
             />
-          </form>
+          </div>
 
-          <form className="w-full mt-4 sm:text-sm">
+          <div className="w-full mt-4 sm:text-sm">
             <fieldset>
-              <legend>
-                Usuário tem conta de Comerciante ou de Pessoa Física?
-              </legend>
+              <legend>Usuário tem conta de Comerciante ou de Pessoa Física?</legend>
               <div className="mt-2 content-between gap-2 flex">
-                <>
+                <div>
                   <input
                     id="draft"
                     type="radio"
-                    name="status"
-                    className="peer/draft"
+                    name="input5"
+                    value="1"
+                    checked={localFormData.input5 === "1"}
+                    onChange={handleChange}
                   />
-                  <label
-                    htmlFor="draft"
-                    className="peer-checked/draft:text-quinary"
-                  >
-                    Comerciante/Lojista
-                  </label>
-                </>
-                <>
+                  <label htmlFor="draft">Comerciante/Lojista</label>
+                </div>
+                <div>
                   <input
                     id="published"
-                    className="peer/published"
                     type="radio"
-                    name="status"
+                    name="input5"
                     value="2"
+                    checked={localFormData.input5 === "2"}
+                    onChange={handleChange}
                   />
-                  <label
-                    htmlFor="published"
-                    className="peer-checked/published:text-sky-500"
-                  >
-                    Cliente
-                  </label>
-                </>
+                  <label htmlFor="published">Cliente</label>
+                </div>
               </div>
             </fieldset>
-          </form>
+          </div>
 
-          <form className="w-full mt-4">
+          <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
               htmlFor="saldo"
@@ -178,14 +197,14 @@ export default function InputForm({
               value={localFormData.input6}
               onChange={handleChange}
             />
-          </form>
-            <button
-              className="mt-6 flex w-48 flex-col px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 
+          </div>
+          <button
+            className="mt-6 flex w-48 flex-col px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 
             focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
-              type="submit"
-            >
-              Gerar Texto Request
-            </button>
+            type="submit"
+          >
+            Gerar Texto Request
+          </button>
         </form>
       </div>
     </div>

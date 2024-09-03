@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/listar-todos" className="flex float-left hover:text-red-500">
           <UserIcon className="size-6 mr-2" />
           <div className="hidden md:block">Listar Usuários</div>
         </a>

@@ -2,11 +2,25 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import GradientsProjects from "../layout/home/gradientsProjects";
 import Navbar from "../layout/menus/navbar";
-import Sidebar from "../layout/menus/sidebar";
-import GradientsProjects from "./../layout/home/gradientsProjects";
+import SidebarSwagger from "../layout/menus/sidebarSwagger";
 
 export default function Home() {
+  const requisicaoLogin = `
+  {
+    "username": "user",
+    "password": "123456"
+  }`
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("Texto copiado!");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="flex flex-col">
       <Navbar />
@@ -14,7 +28,7 @@ export default function Home() {
         <GradientsProjects />
       </div>
       <div className="flex flex-1">
-        <Sidebar />
+        <SidebarSwagger />
         <div
           className="
           flex-grow p-2 my-3 mr-5 rounded-lg lg:mr-20 sm:p-6 border border-zinc-600
@@ -70,15 +84,17 @@ export default function Home() {
               >
                 <h2 className="pb-2 text-xl font-semibold"></h2>
                 <h1 className="pb-6 text-2xl font-bold md:text-3xl 2xl:text-4xl">
-                  * Tips:
+                  * Como usar a API
                 </h1>
-                <p className="mb-6 text-pretty tracking-tight">
-                  Nas telas onde existe envio de objeto via json, coloquei o textarea da request liberado para alteração manual.
-                  Assim, é possível interagir com a API como se estivesse na página html do Swagger no railway,
-                  ou em qualquer plataforma ou prompt enviando a requisição. Assim é possível testar tudo por aqui :D
-                  . <br />
-                </p>
-                <h2 className="pb-2 text-xl font-semibold">Seja bem-vind@!</h2>
+                <h3>
+                  Esta API utiliza o login do Spring Security, portanto é
+                  necessário criar novo login no primeiro acesso, e
+                  posteriormente apenas inserir nome de usuário e senha para
+                  acessar. Assim cada user tem seus próprios dados, não
+                  conflitando com outras pessoas que podem eventualmente estarem
+                  utilizando ao mesmo tempo.
+                </h3>
+                <h2 className="pb-2 text-xl font-semibold">Texto h2!</h2>
               </motion.div>
               <motion.div
                 className="xl:col-span-2 flex flex-col px-4 py-3
@@ -91,69 +107,84 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
               >
                 <h1 className="pb-6 text-2xl font-bold md:text-3xl 2xl:text-4xl">
-                  Deploy e infra
+                  Deploy - Infra - DB
                 </h1>
                 <h2 className="mb-6 text-pretty text-md text-bold tracking-tight">
-                  A API foi disponibilizada no railway, e pode ser consultada diretamente pelo link swagger do projeto,
-                  onde você pode ter as mesmas interações que ocorrem por aqui!
-                  O link é
-                  <br/><strong>
-                  <a className="text-lg flex flex-row" target="_blank" href="https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html">
-                  https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html
-                  <pre> </pre>
-                  <ExternalLink />
-                  </a>
+                  A API foi disponibilizada no railway, e como conta com
+                  documentação OpenAPI, pode ser consultada diretamente pelo
+                  link swagger do projeto, para realizar interações com os
+                  verbos HTTP! O link é
+                  <br />
+                  <br />
+                  <strong>
+                    <a
+                      className="text-lg flex flex-row"
+                      target="_blank"
+                      href="https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html"
+                    >
+                      https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html
+                      <pre> </pre>
+                      <ExternalLink />
+                    </a>
                   </strong>
+                  <br />
+                  Os dados inseridos e consultados são separados no banco de
+                  dados pelo id de quem está usando a API. Após o seu login, e
+                  obtenção do token, é necessário que ele conste em todas as
+                  requisições, é nesse momento que os dados de CRUD são
+                  separados exclusivamente para cada login. A escolha desse
+                  método se deu por ser uma solução eficiente para um portfólio,
+                  onde a segurança e gerenciamento dos dados não é o ponto
+                  principal, e o deploy gratuito do railway pode não ser
+                  suficiente. Mas entendo que tecnicamente falando, o ideal
+                  seria que fosse multi-tenancy mesmo, com bancos de dados
+                  separados.
                 </h2>
-                <h2 className="pb-2 text-xl font-semibold">Seja bem-vind@!</h2>
               </motion.div>
-
               <motion.div
-                className="flex flex-col px-4 py-3
+                className="xl:col-span-2 flex flex-col px-4 py-3
               lg:mt-0 lg:mx-auto lg:px-6 lg:py-5 lg:text-left 
               border-2 border-black
-              bg-zinc-50 bg-opacity-80 text-center font-operator shadow-lg rounded-md shadow-black"
+              bg-emerald-500 bg-opacity-60 text-center font-aleo shadow-lg rounded-md shadow-black"
                 viewport={{ once: true, amount: 0.5 }}
                 initial={{ opacity: 0, x: 0, y: 100 }}
                 transition={{ type: "spring", stiffness: 50, duration: 7 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
               >
-                <h2 className="pb-2 text-xl font-semibold"></h2>
                 <h1 className="pb-6 text-2xl font-bold md:text-3xl 2xl:text-4xl">
-                  * Tips:
+                  Começe por aqui
                 </h1>
-                <p className="mb-6 text-pretty tracking-tight">
-                  Nas telas onde existe envio de objeto via json, coloquei o textarea da request liberado para alteração manual.
-                  Assim, é possível interagir com a API como se estivesse na página html do Swagger no railway,
-                  ou em qualquer plataforma ou prompt enviando a requisição. Assim é possível testar tudo por aqui :D
-                  . <br />
-                </p>
-                <h2 className="pb-2 text-xl font-semibold">Seja bem-vind@!</h2>
-              </motion.div>
-              <motion.div
-                className="flex flex-col px-4 py-3
-              lg:mt-0 lg:mx-auto lg:px-6 lg:py-5 lg:text-left 
-              border-2 border-black
-              bg-zinc-50 bg-opacity-80 text-center font-operator shadow-lg rounded-md shadow-black"
-                viewport={{ once: true, amount: 0.5 }}
-                initial={{ opacity: 0, x: 0, y: 100 }}
-                transition={{ type: "spring", stiffness: 50, duration: 7 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-              >
-                <h2 className="pb-2 text-xl font-semibold"></h2>
-                <h1 className="pb-6 text-2xl font-bold md:text-3xl 2xl:text-4xl">
-                  * Tips:
-                </h1>
-                <p className="mb-6 text-pretty tracking-tight">
-                  Nas telas onde existe envio de objeto via json, coloquei o textarea da request liberado para alteração manual.
-                  Assim, é possível interagir com a API como se estivesse na página html do Swagger no railway,
-                  ou em qualquer plataforma ou prompt enviando a requisição. Assim é possível testar tudo por aqui :D
-                  . <br />
-                </p>
-                <h2 className="pb-2 text-xl font-semibold">Seja bem-vind@!</h2>
+                <h2 className="mb-6 text-pretty text-md text-bold tracking-tight">
+                  *Estas instruções constam também diretamente na tela inicial da API* <br /><br />
+                  Inicie criando seu login enviando a requisição POST:<br />
+                  {requisicaoLogin}
+                  <br />
+                  Para URI: 
+                  <br />
+                  <br />
+                  <strong>
+                    <button
+                      className="text-lg flex flex-row"
+                      // onClick={() => navigator.clipboard.writeText("Texto copiado!")}
+                      onClick={handleCopy}
+                    >
+                      (Clique para copiar) https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html
+                    </button>
+                    {copied && (
+                  <div
+                   className="fixed bottom-4 right-4 bg-red-700 text-white text-lg p-4 rounded shadow-lg"
+                 >
+                   Texto copiado!
+                  </div> )}
+                  </strong>
+                  <br />
+                  Após o envio em formato JSON desses dados, e validação via e-mail, você irá obter um token de acesso,
+                  e com ele então, fazer as requisições que desejar. Se preferir não inserir seu e-mail, alternativamente,
+                  indico utilizar o e-mail temporário do site <strong>https://temp-mail.org/pt/</strong>. Mas relembrando
+                  que e-mails temporários se perdem facilmente, e nesse caso os dados enviados serão perdidos.
+                </h2>
               </motion.div>
             </div>
-          
           </div>
         </div>
       </div>
