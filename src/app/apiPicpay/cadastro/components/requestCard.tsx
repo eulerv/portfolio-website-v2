@@ -12,9 +12,10 @@ interface RequestCardProps {
     input5: string;
     input6: string;
   };
+  onResponse: (responseInfo: { statusCode: number; statusText: string; response: string | null }) => void;
 }
 
-export default function RequestCard({ formData }: RequestCardProps) {
+export default function RequestCard({ formData, onResponse }: RequestCardProps) {
   const [response, setResponse] = useState<string | null>(null);
 
   // Formata CPF e saldo antes de usar no preview e no envio
@@ -33,16 +34,28 @@ export default function RequestCard({ formData }: RequestCardProps) {
 
   const handleSendRequest = async () => {
     try {
-      console.log("Request Data:", requestDataString); // Verifica o conteúdo que está sendo enviado
+      const response = await axios.post("https://api-desafio-picpay-production.up.railway.app/wallets", requestDataString, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      const response = await axios.post("https://api-desafio-picpay-production.up.railway.app/wallets", requestDataString)
-      .then((response) => {
-      console.log("Response Data:", response.data); // Verifica a resposta
-      setResponse(JSON.stringify(response.data, null, 2))})
+      setResponse(JSON.stringify(response.data, null, 2));
 
-    } catch (error) {
-      console.error("Error:", error); // Verifica o erro
-      setResponse(`Erro ao enviar a requisição: ${error}`);
+      onResponse({
+        statusCode: response.status,
+        statusText: response.statusText,
+        response: JSON.stringify(response.data, null, 2),
+      });
+
+    } catch (error: any) {
+      setResponse("Erro ao enviar a requisição.");
+
+      onResponse({
+        statusCode: error.response?.status || 500,
+        statusText: error.response?.statusText || "Internal Server Error",
+        response: error.response?.data || "Erro ao enviar a requisição.",
+      });
     }
   };
 
@@ -54,8 +67,8 @@ export default function RequestCard({ formData }: RequestCardProps) {
       <div className="flex-row flex-grow self-left bg-black rounded-b-lg px-5 py-6">
         <textarea
           className="flex-auto bold min-h-[500px] lg:h-full w-full
-        bg-slate-50 bg-opacity-5 border-l-4 rounded-r-lg border-slate-500 px-5 py-6 text-slate-500
-        outline-none font-consolas caret-red-500"
+          bg-slate-50 bg-opacity-5 border-l-4 rounded-r-lg border-slate-500 px-5 py-6 text-slate-500
+          outline-none font-consolas caret-red-500"
           spellCheck="false"
           value={requestDataString}
           readOnly
@@ -70,15 +83,6 @@ export default function RequestCard({ formData }: RequestCardProps) {
           Enviar POST
         </button>
       </div>
-
-      {response && (
-        <div className="mt-4">
-          <h2 className="text-xl">Resposta:</h2>
-          <pre className="mt-2 p-2 bg-gray-200 rounded-md">
-            {response}
-          </pre>
-        </div>
-      )}
     </div>
   );
 }
