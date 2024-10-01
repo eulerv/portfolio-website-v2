@@ -14,6 +14,7 @@ export default function Authenticate() {
   const handleAuthenticate = async () => {
     try {
       const response = await axios.post(
+        // "https://api-picpay.2fs.com.br/authenticate",
         "https://api-desafio-picpay-production.up.railway.app/authenticate",
         // "http://localhost:8080/authenticate",
         {
