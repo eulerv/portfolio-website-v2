@@ -38,6 +38,10 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
   const requestDataString = JSON.stringify(requestData, null, 2);
 
   const handleSendRequest = async () => {
+    // Log para verificar o que está sendo enviado
+    console.log("Request Data:", requestData);
+    console.log("Token JWT:", formData.token);
+
     try {
       const response = await axios.post(
         "https://api-desafio-picpay-production.up.railway.app/wallets",
@@ -51,6 +55,9 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
         }
       );
 
+       // Log da resposta da API
+       console.log("API Response:", response);
+
       setResponse(JSON.stringify(response.data, null, 2));
 
       onResponse({
@@ -60,6 +67,9 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
       });
 
     } catch (error: any) {
+      // Log do erro para ver detalhes completos
+      console.error("Erro ao enviar a requisição:", error);
+      
       setResponse("Erro ao enviar a requisição.");
 
       onResponse({
