@@ -4,22 +4,11 @@
 const MenuSection: React.FC = () => {
   return (
     <div
-      className="
-        flex
-        flex-row
-        sm:h-12
-        sm:ml-10
-        sm:pt-3
-        sm:px-2
-        h-10
-        font-operator
-        text-sm
-        text-zinc-400
-        items-center
-        self-center
-        gap-3
-        leading-tight
-        "
+      className="flex flex-row sm:h-12
+        sm:ml-10 sm:pt-3 sm:px-2
+        h-10 font-operator text-sm
+        text-zinc-400 items-center self-center
+        gap-3 leading-tight"
     >
       <a
         href="/"
@@ -43,10 +32,9 @@ const MenuSection: React.FC = () => {
         <a href="/terceiroProjeto" className="md:block hidden">
           3.API estacionamento
         </a>
-
       </div>
       <a
-        href="/"
+        href="/contato"
         className="hidden md:flex md:flex-col justify-center items-center text-bold text-zinc-50"
       >
         {/* <User2Icon className="flex text-center" /> */}

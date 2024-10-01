@@ -51,13 +51,7 @@ export default function HomeDiv3() {
                 Contato
               </a>
             </div>
-            <div className="flex justify-center">
-              <a
-                href="https://github.com/eulerv/portfolio-website-v2"
-                target="_blank"
-              >pode ter conteudo aqui
-              </a>
-            </div>
+            
           </div>
           <p className="my-6 font-aleo">
             Assim podemos conversar via e-mail ou Whatsapp. Você também pode me

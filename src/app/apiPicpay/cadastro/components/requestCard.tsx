@@ -1,3 +1,4 @@
+// requestCard.tsx
 "use client";
 
 import axios from "axios";
@@ -5,6 +6,7 @@ import { useState } from "react";
 
 interface RequestCardProps {
   formData: {
+    token: string; // Adicionado o token aqui
     input1: string;
     input2: string;
     input3: string;
@@ -22,23 +24,32 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
   const formattedCPF = formData.input2.replace(/\D/g, "");
   const formattedBalance = formData.input6.replace(/[^\d.,]/g, "").replace(",", ".");
 
-  // Cria o conteúdo do textarea
-  const requestDataString = `{
-    "fullName": "${formData.input1}",
-    "cpf": "${formattedCPF}",
-    "email": "${formData.input3}",
-    "password": "${formData.input4}",
-    "type": ${formData.input5},
-    "balance": "${formattedBalance}"
-  }`;
+  // Cria o conteúdo do JSON a ser enviado na requisição
+  const requestData = {
+    fullName: formData.input1,
+    cpf: formattedCPF,
+    email: formData.input3,
+    password: formData.input4,
+    type: formData.input5,
+    balance: formattedBalance,
+  };
+
+  // Cria a string para exibir no textarea
+  const requestDataString = JSON.stringify(requestData, null, 2);
 
   const handleSendRequest = async () => {
     try {
-      const response = await axios.post("https://api-desafio-picpay-production.up.railway.app/wallets", requestDataString, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post(
+        "https://api-desafio-picpay-production.up.railway.app/wallets",
+        // "http://localhost:8080/wallets",
+        requestData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${formData.token}`, // Inclui o token JWT aqui
+          },
+        }
+      );
 
       setResponse(JSON.stringify(response.data, null, 2));
 
@@ -74,10 +85,9 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
           readOnly
         ></textarea>
       </div>
-
       <div className="mt-4 mb-6 flex justify-center">
         <button
-          className="px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+          className="px-4 py-2 bg-yellow-600 bg-opacity-80 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
           onClick={handleSendRequest}
         >
           Enviar POST

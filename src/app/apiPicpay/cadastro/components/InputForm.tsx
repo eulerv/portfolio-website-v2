@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import { NumericFormat } from "react-number-format";
 
@@ -9,6 +9,7 @@ export default function InputForm({
 }: {
   setFormData: React.Dispatch<
     React.SetStateAction<{
+      token: string; // Adicionado o token aqui
       input1: string;
       input2: string;
       input3: string;
@@ -19,6 +20,7 @@ export default function InputForm({
   >;
 }) {
   const [localFormData, setLocalFormData] = useState({
+    token: "",
     input1: "",
     input2: "",
     input3: "",
@@ -27,30 +29,37 @@ export default function InputForm({
     input6: "",
   });
 
+  // Usar useEffect para carregar o token do localStorage quando o componente monta
+  useEffect(() => {
+    const storedToken = localStorage.getItem("jwtToken");
+    if (storedToken) {
+      setLocalFormData((prevData) => ({
+        ...prevData,
+        token: storedToken,
+      }));
+    }
+  }, []);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    // Remover a pontuação do CPF
-    const formattedCPF = localFormData.input2.replace(/\D/g, '');
+    // Remove a pontuação do CPF
+    const formattedCPF = localFormData.input2.replace(/\D/g, "");
 
-    // Remover a máscara de moeda e ajustar o formato do saldo
+    // Remove a máscara de moeda, ajustar o formato do saldo
     const formattedBalance = parseFloat(
-      localFormData.input6.replace(/[^\d,]/g, '').replace(',', '.')
+      localFormData.input6.replace(/[^\d,]/g, "").replace(",", ".")
     ).toFixed(2);
 
-    // Atualizar o estado local com os valores formatados
-    setLocalFormData((prevData) => ({
-      ...prevData,
-      input2: formattedCPF,
-      input6: formattedBalance,
-    }));
-
-    // Passa o objeto de dados formatado para o componente Home
-    setFormData({
+    // Atualiza o estado local com os valores formatados
+    const formattedData = {
       ...localFormData,
       input2: formattedCPF,
       input6: formattedBalance,
-    });
+    };
+
+    // Passa o objeto de dados formatado para o componente pai
+    setFormData(formattedData);
   };
 
   const handleChange = (e: any) => {
@@ -63,11 +72,31 @@ export default function InputForm({
 
   return (
     <div>
-      <div className="flex-1 flex-col justify-left min-h-full border border-emerald-800 rounded-xl bg-gray-100 p-4">
+      <div className="flex-1 flex-col min-h-full border border-emerald-800 rounded-xl bg-gray-100 p-4 justify-center">
         <div className="flex-shrink w-full m-1 justify-center text-gray-700 text-center">
           <h1 className="text-2xl">POST</h1>
         </div>
-        <form className="w-full" onSubmit={handleSubmit}>
+        <form className="w-full justify-left" onSubmit={handleSubmit}>
+          {/* Campo Token JWT */}
+          <div className="w-full mt-4">
+            <label
+              className="block text-sm font-medium text-gray-700"
+              htmlFor="token"
+            >
+              Token JWT
+            </label>
+            <input
+              type="text"
+              id="token"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
+              shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
+              placeholder="Token JWT"
+              name="token"
+              value={localFormData.token}
+              onChange={handleChange}
+            />
+          </div>
+
           <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
@@ -145,8 +174,10 @@ export default function InputForm({
 
           <div className="w-full mt-4 sm:text-sm">
             <fieldset>
-              <legend>Usuário tem conta de Comerciante ou de Pessoa Física?</legend>
-              <div className="mt-2 content-between gap-2 flex">
+              <legend>
+                Usuário tem conta de Comerciante ou de Pessoa Física?
+              </legend>
+              <div className="mt-2 content-between gap-3 flex">
                 <div>
                   <input
                     id="draft"
@@ -156,7 +187,7 @@ export default function InputForm({
                     checked={localFormData.input5 === "1"}
                     onChange={handleChange}
                   />
-                  <label htmlFor="draft">Comerciante/Lojista</label>
+                  <label htmlFor="draft"> Comerciante/Lojista</label>
                 </div>
                 <div>
                   <input
@@ -167,7 +198,7 @@ export default function InputForm({
                     checked={localFormData.input5 === "2"}
                     onChange={handleChange}
                   />
-                  <label htmlFor="published">Cliente</label>
+                  <label htmlFor="published"> Cliente</label>
                 </div>
               </div>
             </fieldset>
@@ -199,8 +230,8 @@ export default function InputForm({
             />
           </div>
           <button
-            className="mt-6 flex w-48 flex-col px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 
-            focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+            className="mt-6 flex w-48 flex-col px-4 py-2 bg-yellow-600 bg-opacity-80 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 
+            focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75 justify-end"
             type="submit"
           >
             Gerar Texto Request

@@ -10,7 +10,7 @@ import ScrollToTopButton from "./layout/utils/scrollToTopButton";
 
 export default function Home() {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden scroll-smooth">
       <div className="absolute items-top w-full">
         <Navbar />
       </div>

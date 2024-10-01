@@ -1,9 +1,9 @@
 "use client";
 
+import Main from "../apiPicpay/login/page";
 import Footer from "../layout/footer";
 import Navbar from "../layout/menus/navbar";
 import Sidebar from "../layout/menus/sidebar";
-import Main from "../layout/projects/main";
 
 export default function Home() {
   return (

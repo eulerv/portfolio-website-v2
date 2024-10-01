@@ -27,6 +27,14 @@ export default function ResponseCard() {
               </div>
             </div>
           </div>
+          <div className="mt-4 mb-6 flex justify-center">
+        <button
+          className="px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+          //onClick={handleSendRequest}
+        >
+          Enviar GET
+        </button>
+      </div>
         </div>
       </div>
     </div>

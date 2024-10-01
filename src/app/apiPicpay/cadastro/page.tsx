@@ -11,6 +11,7 @@ import ResponseCard from "./components/responseCard";
 
 export default function Home() {
   const [formData, setFormData] = useState({
+    token: "", // Adicionado o token aqui
     input1: "",
     input2: "",
     input3: "",
