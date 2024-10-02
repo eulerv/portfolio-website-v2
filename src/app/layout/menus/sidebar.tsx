@@ -36,37 +36,37 @@ const Sidebar: React.FC = () => {
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/apiPicpay/cadastro" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/wallet/cadastrar" className="flex float-left hover:text-red-500">
           <UserAdd className="size-6 mr-2" />
           <div className="hidden md:block text-left">Cadastrar novo usuário</div>
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/apiPicpay/listar-todos" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/wallet/listar-todos" className="flex float-left hover:text-red-500">
           <UserIcon className="size-6 mr-2" />
           <div className="hidden md:block text-left">Listar Usuários</div>
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/wallet/atualizar" className="flex float-left hover:text-red-500">
           <UserUpdate className="size-6 mr-2" />
           <div className="hidden md:block text-left">Atualizar dados de Usuário</div>
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/transaction/nova-transacao" className="flex float-left hover:text-red-500">
           <Arrow className="size-6 mr-2" />
           <div className="hidden md:block text-left">Realizar transação</div>
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/transaction/listar-todos" className="flex float-left hover:text-red-500">
           <Arrow className="size-6 mr-2" />
           <div className="hidden md:block text-left">Consultar transações</div>
         </a>
       </button>
       <button className="px-2 py-1">
-        <a href="/" className="flex float-left hover:text-red-500">
+        <a href="/apiPicpay/transaction/deletar" className="flex float-left hover:text-red-500">
           <UserDelete className="size-6 mr-2" />
           <div className="hidden md:block text-left">Deletar Usuário</div>
         </a>

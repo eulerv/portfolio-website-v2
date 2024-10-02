@@ -13,7 +13,7 @@ export default function ResponseCard({ responseInfo }: ResponseCardProps) {
     : JSON.stringify(responseInfo.response, null, 2);
 
   return (
-    <div className="flex flex-col items-left rounded-lg h-full bg-zinc-50 px-7 py-4 gap-4 border-2 border-black text-zinc-800">
+    <div className="flex flex-col items-left rounded-lg h-full bg-zinc-50 px-7 py-4 gap-4 border-2 border-black text-zinc-800" >
       <div className="w-full m-1 justify-center text-bold border-b-2 border-black">
         <h1 className="text-3xl">Response HTTP</h1>
       </div>

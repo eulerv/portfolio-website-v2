@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import InputMask from "react-input-mask";
 import { NumericFormat } from "react-number-format";
 
 export default function InputForm({
   setFormData,
+  formData,
 }: {
   setFormData: React.Dispatch<
     React.SetStateAction<{
-      token: string; // Adicionado o token aqui
+      token: string;
       input1: string;
       input2: string;
       input3: string;
@@ -18,42 +19,30 @@ export default function InputForm({
       input6: string;
     }>
   >;
+  formData: {
+    token: string;
+    input1: string;
+    input2: string;
+    input3: string;
+    input4: string;
+    input5: string;
+    input6: string;
+  };
 }) {
-  const [localFormData, setLocalFormData] = useState({
-    token: "",
-    input1: "",
-    input2: "",
-    input3: "",
-    input4: "",
-    input5: "",
-    input6: "",
-  });
-
-  // Usar useEffect para carregar o token do localStorage quando o componente monta
-  useEffect(() => {
-    const storedToken = localStorage.getItem("jwtToken");
-    if (storedToken) {
-      setLocalFormData((prevData) => ({
-        ...prevData,
-        token: storedToken,
-      }));
-    }
-  }, []);
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     // Remove a pontuação do CPF
-    const formattedCPF = localFormData.input2.replace(/\D/g, "");
+    const formattedCPF = formData.input2.replace(/\D/g, "");
 
     // Remove a máscara de moeda, ajustar o formato do saldo
     const formattedBalance = parseFloat(
-      localFormData.input6.replace(/[^\d,]/g, "").replace(",", ".")
+      formData.input6.replace(/[^\d,]/g, "").replace(",", ".")
     ).toFixed(2);
 
-    // Atualiza o estado local com os valores formatados
+    // Atualiza o estado com os valores formatados
     const formattedData = {
-      ...localFormData,
+      ...formData,
       input2: formattedCPF,
       input6: formattedBalance,
     };
@@ -64,14 +53,14 @@ export default function InputForm({
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setLocalFormData({
-      ...localFormData,
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
 
   return (
-    <div>
+    <div >
       <div className="flex-1 flex-col min-h-full border border-emerald-800 rounded-xl bg-gray-100 p-4 justify-center">
         <div className="flex-shrink w-full m-1 justify-center text-gray-700 text-center">
           <h1 className="text-2xl">POST</h1>
@@ -89,14 +78,15 @@ export default function InputForm({
               type="text"
               id="token"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-              shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
+                  shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
               placeholder="Token JWT"
               name="token"
-              value={localFormData.token}
+              value={formData.token}
               onChange={handleChange}
             />
           </div>
 
+          {/* Outros campos do formulário */}
           <div className="w-full mt-4">
             <label
               className="block text-sm font-medium text-gray-700"
@@ -108,10 +98,10 @@ export default function InputForm({
               type="text"
               id="nome"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-            shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
+              shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
               placeholder="Digite o nome de usuário"
               name="input1"
-              value={localFormData.input1}
+              value={formData.input1}
               onChange={handleChange}
             />
           </div>
@@ -127,13 +117,14 @@ export default function InputForm({
               mask={"999.999.999-99"}
               maskChar={" "}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-            shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
+              shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
               placeholder="000.000.000-00"
               name="input2"
-              value={localFormData.input2}
+              value={formData.input2}
               onChange={handleChange}
             />
           </div>
+
 
           <div className="w-full mt-4">
             <label
@@ -149,7 +140,7 @@ export default function InputForm({
             shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
               placeholder="you@example.com"
               name="input3"
-              value={localFormData.input3}
+              value={formData.input3}
               onChange={handleChange}
             />
           </div>
@@ -167,7 +158,7 @@ export default function InputForm({
             shadow-sm focus:outline-none focus:ring-emerald-800 focus:border-emerald-800 sm:text-sm"
               placeholder="A senha será visível para facilitar a visualização da requisição."
               name="input4"
-              value={localFormData.input4}
+              value={formData.input4}
               onChange={handleChange}
             />
           </div>
@@ -184,7 +175,7 @@ export default function InputForm({
                     type="radio"
                     name="input5"
                     value="1"
-                    checked={localFormData.input5 === "1"}
+                    checked={formData.input5 === "1"}
                     onChange={handleChange}
                   />
                   <label htmlFor="draft"> Comerciante/Lojista</label>
@@ -195,7 +186,7 @@ export default function InputForm({
                     type="radio"
                     name="input5"
                     value="2"
-                    checked={localFormData.input5 === "2"}
+                    checked={formData.input5 === "2"}
                     onChange={handleChange}
                   />
                   <label htmlFor="published"> Cliente</label>
@@ -225,13 +216,13 @@ export default function InputForm({
               allowLeadingZeros={false}
               allowNegative={false}
               name="input6"
-              value={localFormData.input6}
+              value={formData.input6}
               onChange={handleChange}
             />
           </div>
           <button
             className="mt-6 flex w-48 flex-col px-4 py-2 bg-yellow-600 bg-opacity-80 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 
-            focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75 justify-end"
+                focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75 justify-end"
             type="submit"
           >
             Gerar Texto Request

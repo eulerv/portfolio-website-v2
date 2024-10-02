@@ -2,11 +2,13 @@
 "use client";
 
 import axios from "axios";
+import https from "https";
 import { useState } from "react";
 
 interface RequestCardProps {
   formData: {
     token: string; // Adicionado o token aqui
+    input0: string;
     input1: string;
     input2: string;
     input3: string;
@@ -26,6 +28,7 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
 
   // Cria o conteúdo do JSON a ser enviado na requisição
   const requestData = {
+    id: formData.input0,
     fullName: formData.input1,
     cpf: formattedCPF,
     email: formData.input3,
@@ -34,8 +37,12 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
     balance: formattedBalance,
   };
 
-  // Cria a string para exibir no textarea
+
   const requestDataString = JSON.stringify(requestData, null, 2);
+
+    const httpsAgent = new https.Agent({  
+    rejectUnauthorized: false, // Ignora a verificação SSL
+  });
 
   const handleSendRequest = async () => {
     // Log para verificar o que está sendo enviado
@@ -43,8 +50,9 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
     console.log("Token JWT:", formData.token);
 
     try {
-      const response = await axios.post(
-        "https://api-desafio-picpay-production.up.railway.app/wallets",
+      const response = await axios.put(
+        `https://api-desafio-picpay-production.up.railway.app/wallets/${formData.input0}`,
+
         // "http://localhost:8080/wallets",
         requestData,
         {
@@ -52,6 +60,7 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
             "Content-Type": "application/json",
             Authorization: `Bearer ${formData.token}`, // Inclui o token JWT aqui
           },
+          httpsAgent,
         }
       );
 
@@ -81,7 +90,7 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
   };
 
   return (
-    <div className="flex flex-col items-left rounded-xl h-full bg-quaternary border-2 border-black">
+    <div className="flex flex-col items-left rounded-xl h-full bg-quaternary border-2 border-black" >
       <div className="flex-shrink w-full m-1 justify-center text-gray-700 text-center">
         <h1 className="text-2xl">Request Preview</h1>
       </div>
@@ -92,7 +101,7 @@ export default function RequestCard({ formData, onResponse }: RequestCardProps) 
           outline-none font-consolas caret-red-500"
           spellCheck="false"
           value={requestDataString}
-          readOnly
+          
         ></textarea>
       </div>
       <div className="mt-4 mb-6 flex justify-center">

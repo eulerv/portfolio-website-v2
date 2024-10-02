@@ -25,7 +25,7 @@ export default function Authenticate() {
           headers: {
             "Content-Type": "application/json",
           },
-          responseType: "text", // Adicionado para tratar a resposta como texto
+          responseType: "text",
         }
       );
       setResponseStatus(response.status);
