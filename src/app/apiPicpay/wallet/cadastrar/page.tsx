@@ -21,8 +21,7 @@ export default function Home() {
     input6: "",
   });
 
-  // Usar useEffect para carregar o token do localStorage quando o componente monta
-  useEffect(() => {
+    useEffect(() => {
     const storedToken = localStorage.getItem("jwtToken");
     if (storedToken) {
       setFormData((prevData) => ({
