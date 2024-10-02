@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import GradientsProjects from "../../layout/home/gradientsProjects";
-import Navbar from "../../layout/menus/navbar";
-import Sidebar from "../../layout/menus/sidebar";
+import GradientsProjects from "../../../layout/home/gradientsProjects";
+import Navbar from "../../../layout/menus/navbar";
+import Sidebar from "../../../layout/menus/sidebar";
 import ResponseCard from "./components/responseCard";
 
 export default function Home() {

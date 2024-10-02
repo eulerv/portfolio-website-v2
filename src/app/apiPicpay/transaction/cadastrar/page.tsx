@@ -6,9 +6,9 @@ import Sidebar from "@/app/layout/menus/sidebar";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-const InputForm = dynamic(() => import("@/app/apiPicpay/cadastro/components/InputForm"), { ssr: false });
-const RequestCard = dynamic(() => import("@/app/apiPicpay/cadastro/components/requestCard"), { ssr: false });
-const ResponseCard = dynamic(() => import("@/app/apiPicpay/cadastro/components/responseCard"), { ssr: false });
+const InputForm = dynamic(() => import("@/app/apiPicpay/transaction/cadastrar/components/InputForm"), { ssr: false });
+const RequestCard = dynamic(() => import("@/app/apiPicpay/transaction/cadastrar/components/requestCard"), { ssr: false });
+const ResponseCard = dynamic(() => import("@/app/apiPicpay/transaction/cadastrar/components/responseCard"), { ssr: false });
 
 export default function Home() {
   const [formData, setFormData] = useState({
