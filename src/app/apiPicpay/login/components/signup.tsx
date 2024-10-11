@@ -14,7 +14,7 @@ export default function Signup() {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        "https://api-desafio-picpay-production.up.railway.app/signup",
+        "https://api-picpay.2fs.com.br/signup",
         // "http://localhost:8080/signup",
         {
           username,
@@ -33,11 +33,11 @@ export default function Signup() {
 
   return (
     <div className="p-4 rounded-lg border border-zinc-600 bg-white shadow-md w-full">
-      <div className="bg-secondary rounded-lg w-full text-white p-2 mb-4">
+      <div className="bg-emerald-500 bg-opacity-60 border-2 border-black font-aleo rounded-lg w-full text-black p-2 mb-4">
         Cadastrar usuário:
         <br /> Endpoint: /signup
       </div>
-      <div className="flex flex-col bg-gray-100 p-4 rounded-lg">
+      <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-black"> 
         <div className="w-full">
           <label
             className="block text-sm font-medium text-gray-700"

@@ -24,6 +24,8 @@ const config: Config = {
       tertiary: '#BCAD95', // Areia
       quaternary: '#F2F2F2', // Branco Off White
       quinary: '#3871A6', // Azul Turquesa
+      blue3d: '#00FFFF', // Azul 3D
+      red3d: '#FF0000', // Vermelho 3D
       black: '#000000', // Totalmente preto
       white: '#FFFFFF', // Totalmente branco
       highlight: '#9B1C1C', // Vermelho forte de Destaque

@@ -1,8 +1,10 @@
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+
 
 export const metadata = {
   title: "Eulerv. Portfólio",
-  description: "Protótipo de portfólio novo de Backend",
+  description: "Protótipo de portfólio Backend",
 };
 export default function RootLayout({
   children,
@@ -11,7 +13,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black">{children}</body> 
+      <body className="bg-black">{children}</body>
+      <Analytics />
     </html>
   );
 }

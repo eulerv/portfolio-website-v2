@@ -21,8 +21,8 @@ export default function HomeDiv2() {
           transition={{ type: "tween", stiffness: 50, duration: 3 }}
           whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
         >
-          <div className="relative font-aleo text-6xl font-bold md:mb-20 mb-10 text-white">
-            <div className="absolute font-aleo sm:whitespace-nowrap -translate-x-[50%] left-1/2 text-6xl sm:text-emerald-850 blur z-[-1]">
+          <div className="relative font-aleo text-6xl font-bold md:mb-20 mb-10 text-orange-100">
+            <div className="absolute font-aleo sm:whitespace-nowrap -translate-x-[215px] -translate-y-[2px] left-1/2 text-6xl sm:text-black z-[-1]">
               Skills e Estudos
             </div>
             Skills e Estudos
@@ -59,10 +59,10 @@ export default function HomeDiv2() {
                 <Coffee />
                 <h3 className="mb-4 mt-2 text-base font-semibold">Java Core</h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Tenho uma base sólida em Java Core, com conhecimento em
+                  Tenho uma base sólida nos estudos em Java Core, com conhecimento em
                   conceitos fundamentais como orientação a objetos, coleções, e
-                  manipulação de arquivos. Estou sempre buscando aprender e
-                  aprimorar minhas habilidades.
+                  manipulação de arquivos. Tentando aprender e
+                  aprimorar minhas habilidades no possível sem ter experiência trabalhando como programador.
                 </p>
               </div>
             </div>
@@ -85,9 +85,9 @@ export default function HomeDiv2() {
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
                   Embora meu foco seja backend, adquiri habilidades básicas em
-                  JavaScript e React para interagir com APIs. Gosto de criar
-                  pequenas aplicações front-end para testar e consumir APIs.
-                  pequenas aplicações front-end para testar e consumir APIs.
+                  JavaScript e React para interagir com APIs e construir este portfólio. Consigo criar
+                  pequenas aplicações front-end para testar e consumir APIs, e compreender o básico de funções
+                  javascript e Tailwind CSS.
                 </p>
               </div>
             </div>
@@ -105,13 +105,12 @@ export default function HomeDiv2() {
             <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-slate-600 via-black to-slate-800 shadow-lg shadow-black">
               <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
                 <DatabaseZap />
-                <h3 className="mb-4 mt-2 text-base font-semibold">MySQL</h3>
+                <h3 className="mb-4 mt-2 text-base font-semibold">Bancos de dados</h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Trabalhei usando bastante MySQL na última posição ocupada,
-                  utilizando Joins para cruzar dados e construir novas tabelas.
-                  Tenho prática na criação de scripts de schemas e na execução
-                  de consultas complexas, garantindo a integridade e a
-                  eficiência dos dados.
+                  Trabalhei usando MySQL na última posição ocupada,criando scripts de schemas
+                  e executando comandos não tão complexos, mas com grandes quantidades de dados e
+                  lidando com bancos antigos e novos. Nos estudos aprendi Postgresql e H2, que constam
+                  nas APIs deste portfólio.
                 </p>
               </div>
             </div>
@@ -130,14 +129,14 @@ export default function HomeDiv2() {
               <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
                 <Shell />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
-                  Java Streams
+                  Git e Github
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Exploro o poder das Streams em Java para manipulação de dados
-                  de forma eficiente e expressiva. Estou em constante
-                  aprendizado para aplicar esse recurso de maneira prática em
-                  projetos. para aplicar esse recurso de maneira prática em
-                  projetos.
+                  Conforme avancei nos estudos, fui entendendo melhor como lidar com o Git e Github,
+                  compreendo o versionamento de código, como trabalhar com branches, não tanto pull requests pois
+                  não tenho a vivência de trabalhar com um time ainda.
+                  <br/>
+                  <br/>
                 </p>
               </div>
             </div>
@@ -156,13 +155,13 @@ export default function HomeDiv2() {
               <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
                 <Truck />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
-                  Spring Batch
+                  Metodologias Ágeis
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Estou familiarizado com Spring Batch, tendo estudado e
-                  experimentado o framework para criar soluções de processamento
-                  em lote eficientes. Gosto de resolver problemas complexos e
-                  otimizar processos.
+                Tenho também noções do funcionamento das metodologias ágeis,
+                 participei de algumas daylies e calls com time e clientes no meu emprego anterior.
+                 Entendo o papel do scrum master e P.O. como teoria, e da maneira como funciona o tratamento das demandas,
+                 conversão das regras de negócios em código, atribuição de tempo necessário de features, entre outras.
                 </p>
               </div>
             </div>
@@ -181,13 +180,12 @@ export default function HomeDiv2() {
               <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
                 <Speech />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
-                  Soft Skills
+                  Spring
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Entendo a importância das soft skills no ambiente de trabalho.
-                  Estou continuamente desenvolvendo habilidades como
-                  comunicação, trabalho em equipe e resolução de problemas para
-                  ser um profissional mais completo..
+                  Utilizei o Spring Boot para desenvolver as APIs que estão aqui, e também
+                  outros elementos do ecossistema, para persistência de dados, autenticação, envio de emails, jobs...
+                  Estou explorando no momento microservices e arquiteturas baseadas em eventos, para a próxima API.
                 </p>
               </div>
             </div>

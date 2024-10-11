@@ -5,7 +5,7 @@ import Gradients from "./layout/home/gradients";
 import HomeDiv1 from "./layout/home/homeDiv1";
 import HomeDiv2 from "./layout/home/homeDiv2";
 import HomeDiv3 from "./layout/home/homeDiv3";
-import Navbar from "./layout/menus/navbar";
+import Navbar from "./layout/navbar/navbar";
 import ScrollToTopButton from "./layout/utils/scrollToTopButton";
 
 export default function Home() {

@@ -7,7 +7,7 @@ const HomeDiv1: React.FC = () => {
     <div className="h-auto min-h-screen w-fit overflow-hidden px-2 lg:px-20 flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-8">
       <motion.div
         className="lg:w-1/2 lg:mt-0 mt-6 lg:mx-auto mx-8 p-4 lg:p-10 border-2 border-black
-        bg-quaternary bg-opacity-90 
+        bg-quaternary bg-opacity-90
          text-center font-aleo lg:text-left shadow-lg rounded-md shadow-black"
         viewport={{ once: true, amount: 0.5 }}
         initial={{ opacity: 0, x: -20, y: -100 }}
@@ -19,10 +19,13 @@ const HomeDiv1: React.FC = () => {
           Euler Vicente
         </h1>
         <p className="mb-6 text-pretty tracking-tight">
-          Sou um desenvolvedor back end Java, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
+          Sou um desenvolvedor back end Java sem experiência prática, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
           e apesar de ter conhecimento em outras tecnologias, busco constante
-          aprimoramento e especializa&ccedil;&atilde;o nela. Este &eacute; meu
-          portfolio. <br /> <br />
+          aprimoramento e especializa&ccedil;&atilde;o nela nas mais variadas fontes.
+          Tenho 5 anos de experiência diretamente em contato com tecnologia, prestando suporte para sistemas de
+          controle de ponto e estacionamentos, e agora é o momento de migrar definitivamente para o desenvolvimento de software.
+          Este &eacute; meu portfolio, espero conseguir demonstrar minhas habilidades no momento :D
+           <br /> <br />
           <span className="italic tracking-tight">
             &quot;Sem sonhos, a vida n&atilde;o tem brilho. Sem metas, os sonhos
             n&atilde;o tem alicerces. Sem prioridades, os sonhos n&atilde;o se

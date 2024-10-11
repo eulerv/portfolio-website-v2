@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from "../footer";
-import Navbar from "../menus/navbar";
+import Navbar from "../navbar/navbar";
 import ScrollToTopButton from "../utils/scrollToTopButton";
 import HomeDiv1 from "./homeDiv1";
 import HomeDiv2 from "./homeDiv2";

@@ -2,6 +2,10 @@
 
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import GradientsProjects from "../../../layout/home/gradientsProjects";
+import Sidebar from "../../../layout/menus/sidebar";
+import Navbar from "../../../layout/navbar/navbar";
 import {
   ArrowLeftRight as Arrow,
   LogInIcon,
@@ -10,21 +14,8 @@ import {
   UserIcon,
   UserPen as UserUpdate
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import GradientsProjects from "../../../layout/home/gradientsProjects";
-import Sidebar from "../../../layout/menus/sidebar";
-import Navbar from "../../../layout/navbar/navbar";
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    input1: "",
-    input2: "",
-    input3: "",
-    input4: "",
-    input5: "",
-    input6: "",
-  });
-
   const [token, setToken] = useState<string>("");
 
   useEffect(() => {
@@ -44,17 +35,19 @@ export default function Home() {
       return;
     }
 
+    const userConfirmed = confirm(
+      "Cuidado, esta operação deleta todas as carteiras, e é irreversível."
+    );
+
+    if (!userConfirmed) return;
+
     try {
-      const response = await axios.get(
-        "https://api-picpay.2fs.com.br/wallets",
-        // "http://localhost:8080/wallets",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.delete(`https://api-picpay.2fs.com.br/wallets/all`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       setStatusCode(response.status);
       setStatusText(response.statusText);
@@ -133,7 +126,7 @@ export default function Home() {
       <Sidebar menuItems={menuItems} />
         <div
           className="flex-grow p-2 my-3 mr-14 rounded-lg lg:mr-20 sm:p-6 border border-zinc-600
-          bg-zinc-50  text-zinc-500 shadow-2xl shadow-black font-carlito gap-8 min-h-screen h-full"
+                bg-zinc-50  text-zinc-500 shadow-2xl shadow-black font-carlito gap-8 min-h-screen h-full"
         >
           <motion.div
             className="flex flex-col items-left justify-start min-h-screen h-full bg-zinc-300 text-black p-4 gap-6"
@@ -145,25 +138,26 @@ export default function Home() {
             <div className="lg:grid-cols-2 lg:justify-left gap-12">
               <div
                 className="flex flex-col items-left rounded-lg h-full bg-zinc-50 px-7 py-4
-              gap-4 border-2 border-black text-zinc-800
-              "
+                    gap-4 border-2 border-black text-zinc-800"
               >
                 <div className="flex flex-row w-full m-1 justify-between items-center text-bold border-b-2 border-black pb-2">
-                <h1 className="text-3xl">
-                  GET no endpoint
-                    <strong>&nbsp;/wallets</strong>
+                  <h1 className="text-3xl">
+                    Endpoint
+                    <strong>&nbsp;/wallets/all</strong>
                   </h1>
-                  <div className="flex items-center">
-                    <label htmlFor="token" className="mr-2 font-semibold">
-                      Token JWT:
-                    </label>
-                    <input
-                      id="token"
-                      type="text"
-                      value={token}
-                      onChange={handleTokenChange}
-                      className="w-64 px-2 py-1 border border-gray-300 rounded"
-                    />
+                  <div className="flex justify-end">
+                    <div className="flex items-center">
+                      <label htmlFor="token" className="mr-2 font-semibold">
+                        Token JWT:
+                      </label>
+                      <input
+                        id="token"
+                        type="text"
+                        value={token}
+                        onChange={handleTokenChange}
+                        className="w-64 px-2 py-1 border border-gray-300 rounded"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -176,8 +170,8 @@ export default function Home() {
                         <div className="flex-col self-left bg-black rounded-r-lg px-4 py-6 h-full">
                           <div
                             className="flex-1 h-full w-full
-                              bg-slate-50 bg-opacity-5 border-l-4 rounded-r-lg border-slate-500 px-5 py-6 text-slate-500
-                                outline-none font-consolas resize caret-red-500 overflow-y-auto"
+                                        bg-slate-50 bg-opacity-5 border-l-4 rounded-r-lg border-slate-500 px-5 py-6 text-slate-500
+                                          outline-none font-consolas resize caret-red-500 overflow-y-auto"
                             spellCheck="false"
                           >
                             <pre>{responseData}</pre>
@@ -187,10 +181,10 @@ export default function Home() {
                     </div>
                     <div className="mt-4 mb-6 flex justify-center">
                       <button
-                        className="px-4 py-2 bg-green-800 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+                        className="px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
                         onClick={handleSendRequest}
                       >
-                        Enviar GET
+                        Enviar DELETE
                       </button>
                     </div>
                   </div>

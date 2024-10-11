@@ -7,7 +7,7 @@ import {
   LogInIcon,
   UserPlus as UserAdd,
   UserMinus as UserDelete,
-  UserIcon,
+  User as UserIcon,
   UserPen as UserUpdate
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -46,8 +46,8 @@ export default function Home() {
 
     try {
       const response = await axios.get(
-        "https://api-picpay.2fs.com.br/wallets",
-        // "http://localhost:8080/wallets",
+        "https://api-picpay.2fs.com.br/transactions",
+        // "http://localhost:8080/transactions",
         {
           headers: {
             "Content-Type": "application/json",
@@ -149,10 +149,7 @@ export default function Home() {
               "
               >
                 <div className="flex flex-row w-full m-1 justify-between items-center text-bold border-b-2 border-black pb-2">
-                <h1 className="text-3xl">
-                  GET no endpoint
-                    <strong>&nbsp;/wallets</strong>
-                  </h1>
+                  <h1 className="text-3xl">Response HTTP</h1>
                   <div className="flex items-center">
                     <label htmlFor="token" className="mr-2 font-semibold">
                       Token JWT:
@@ -187,7 +184,7 @@ export default function Home() {
                     </div>
                     <div className="mt-4 mb-6 flex justify-center">
                       <button
-                        className="px-4 py-2 bg-green-800 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
+                        className="px-4 py-2 bg-highlight text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
                         onClick={handleSendRequest}
                       >
                         Enviar GET

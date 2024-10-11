@@ -9,79 +9,22 @@ import {
   LogInIcon,
   UserPlus as UserAdd,
   UserMinus as UserDelete,
-  UserIcon,
+  User as UserIcon,
   UserPen as UserUpdate
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-import dynamic from "next/dynamic";
 const InputForm = dynamic(() => import("../../../project-components/InputForm"), { ssr: false });
 const RequestCard = dynamic(() => import("../../../project-components/RequestCard"), { ssr: false });
 const ResponseCard = dynamic(() => import("../../../project-components/ResponseCard"), { ssr: false });
 
-const menuItems = [
-  {
-    name: "Visão Geral da API",
-    icon: <UserAdd size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay",
-  },
-  {
-    name: "Login (Obrigatório para interagir com a API)",
-    icon: <LogInIcon size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/login",
-  },
-  {
-    name: "Cadastrar nova carteira virtual",
-    icon: <UserAdd size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/wallet/cadastrar",
-  },
-  {
-    name: "Listar Carteiras",
-    icon: <UserIcon size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/wallet/listar-todos",
-  },
-  {
-    name: "Atualizar dados de uma Carteira",
-    icon: <UserUpdate size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/wallet/atualizar",
-  },
-  {
-    name: "Deletar Carteira",
-    icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/wallet/deletar",
-  },
-  {
-    name: "Deletar Todas as Carteiras",
-    icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/wallet/deletar-tudo",
-  },
-  {
-    name: "Realizar transação",
-    icon: <Arrow size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/transaction/gerar-transacao",
-  },
-  {
-    name: "Consultar transações",
-    icon: <Arrow size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/transaction/listar-transacoes",
-  },
-  {
-    name: "Limpar Banco de Dados",
-    icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
-    link: "/apiPicpay/zerar-db",
-  },
-];
-
-
 export default function Home() {
   const [formData, setFormData] = useState({
     token: "",
-    fullName: "",
-    cpf: "",
-    email: "",
-    password: "",
-    type: "",
-    balance: "",
+    payer: "",
+    payee: "",
+    value: "",
   });
 
   const [requestData, setRequestData] = useState<any>(null);
@@ -109,8 +52,8 @@ export default function Home() {
   const handleFormSubmit = (formattedData: any) => {
     setRequestData(formattedData);
   };
-
-  const walletFields = [
+  
+  const transactionFields = [
     {
       name: "token",
       label: "Token JWT",
@@ -118,43 +61,75 @@ export default function Home() {
       placeholder: "Token JWT",
     },
     {
-      name: "fullName",
-      label: "Nome Completo",
-      type: "text",
-      placeholder: "Digite o nome completo",
+      name: "payer",
+      label: "ID do Pagador (Payer)",
+      type: "number",
+      placeholder: "Digite o ID do pagador",
     },
     {
-      name: "cpf",
-      label: "CPF",
-      type: "cpf",
-      placeholder: "000.000.000-00",
+      name: "payee",
+      label: "ID do Recebedor (Payee)",
+      type: "number",
+      placeholder: "Digite o ID do recebedor",
     },
     {
-      name: "email",
-      label: "Email",
-      type: "email",
-      placeholder: "you@example.com",
-    },
-    {
-      name: "password",
-      label: "Senha",
-      type: "text",
-      placeholder: "Digite a senha",
-    },
-    {
-      name: "type",
-      label: "Tipo de Conta",
-      type: "radio",
-      options: [
-        { value: "1", label: "Cliente-PF" },
-        { value: "2", label: "Comerciante/Lojista-PJ" },
-      ],
-    },
-    {
-      name: "balance",
-      label: "Saldo",
+      name: "value",
+      label: "Valor da Transação",
       type: "currency",
       placeholder: "R$ 0,00",
+    },
+  ];
+
+  const menuItems = [
+    {
+      name: "Visão Geral da API",
+      icon: <UserAdd size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay",
+    },
+    {
+      name: "Login (Obrigatório para interagir com a API)",
+      icon: <LogInIcon size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/login",
+    },
+    {
+      name: "Cadastrar nova carteira virtual",
+      icon: <UserAdd size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/wallet/cadastrar",
+    },
+    {
+      name: "Listar Carteiras",
+      icon: <UserIcon size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/wallet/listar-todos",
+    },
+    {
+      name: "Atualizar dados de uma Carteira",
+      icon: <UserUpdate size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/wallet/atualizar",
+    },
+    {
+      name: "Deletar Carteira",
+      icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/wallet/deletar",
+    },
+    {
+      name: "Deletar Todas as Carteiras",
+      icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/wallet/deletar-tudo",
+    },
+    {
+      name: "Realizar transação",
+      icon: <Arrow size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/transaction/gerar-transacao",
+    },
+    {
+      name: "Consultar transações",
+      icon: <Arrow size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/transaction/listar-transacoes",
+    },
+    {
+      name: "Limpar Banco de Dados",
+      icon: <UserDelete size={24} className="mr-2 flex-shrink-0" />,
+      link: "/apiPicpay/zerar-db",
     },
   ];
 
@@ -173,8 +148,8 @@ export default function Home() {
           <motion.div
             className="flex flex-col items-left justify-start min-h-screen h-full bg-zinc-300 text-black p-4 gap-6"
             viewport={{ once: true, amount: 0.5 }}
-            initial={{ opacity: 0, x: 50, y: 100 }}
-            transition={{ type: "spring", stiffness: 20, duration: 0.7 }}
+            initial={{ opacity: 0, x: 0, y: 100 }}
+            transition={{ type: "spring", stiffness: 50, duration: 7 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
           >
             <div className="grid lg:grid-cols-2 lg:justify-left gap-12">
@@ -182,14 +157,14 @@ export default function Home() {
                 setFormData={setFormData}
                 formData={formData}
                 onSubmit={handleFormSubmit}
-                fields={walletFields}
-                title="POST no endpoint /wallets"
+                fields={transactionFields}
+                title="POST no endpoint /transactions"
               />
               <RequestCard
                 formData={requestData}
                 onResponse={setResponseInfo}
                 method="POST"
-                endpoint="/wallets"
+                endpoint="/transactions"
               />
             </div>
             <div className="lg:grid-cols-2 lg:justify-left gap-12">
