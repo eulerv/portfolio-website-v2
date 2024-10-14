@@ -19,7 +19,7 @@ const HomeDiv1: React.FC = () => {
           Euler Vicente
         </h1>
         <p className="mb-6 text-pretty tracking-tight">
-          Sou um desenvolvedor back end Java sem experiência prática, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
+          Sou um desenvolvedor back end Java, apesar de não ter trabalhado efetivamente como dev, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
           e apesar de ter conhecimento em outras tecnologias, busco constante
           aprimoramento e especializa&ccedil;&atilde;o nela nas mais variadas fontes.
           Tenho 5 anos de experiência diretamente em contato com tecnologia, prestando suporte para sistemas de
