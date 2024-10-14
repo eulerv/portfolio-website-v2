@@ -232,7 +232,7 @@ export default function Home() {
                   <div className="text-lg flex flex-row hover:bg-slate-50 my-2 py-0.5 px-0 border border-black">
                     <a
                       target="_blank"
-                      href="https://api-picpay.2fs.com/swagger-ui/index.html"
+                      href="https://https://api-desafio-picpay.onrender.com/swagger-ui/index.html"
                       className="flex flex-row items-center text-center align-middle ml-1 "
                     >
                       <strong>
