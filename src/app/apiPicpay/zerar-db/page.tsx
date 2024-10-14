@@ -43,7 +43,7 @@ export default function Home() {
 
     try {
       
-      const response = await axios.delete(`http://localhost:8080/cleanDB`, {
+      const response = await axios.delete(`https://api-picpay.2fs.com/cleanDB`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

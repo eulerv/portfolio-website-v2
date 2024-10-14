@@ -82,10 +82,14 @@ export default function Home() {
         <Sidebar menuItems={menuItems} />
         <div
           className="
-          flex-grow p-2 my-3 mr-5 rounded-lg lg:mr-20 sm:p-6 border border-zinc-600
-          bg-zinc-50 text-zinc-500 shadow-2xl shadow-black font-carlito gap-8 min-h-screen h-full"
+            flex-grow p-2 my-3 mr-5 rounded-lg lg:mr-20 sm:p-6 border border-zinc-600
+            bg-zinc-50 text-zinc-500 shadow-2xl shadow-black font-carlito gap-8 min-h-screen h-full"
         >
-          <div className="flex lg:flex-row flex-col items-left justify-start h-full bg-zinc-300 text-black p-4 gap-3">
+          <div className="relative flex lg:flex-row flex-col items-left justify-start h-full bg-zinc-300 text-black p-4 gap-3">
+            {/* Mensagem Absolute */}
+            <div className="absolute inset-0 bg-slate-50 opacity-50 z-[2] flex items-start justify-center text-[150px]">
+              API EM DESENVOLVIMENTO
+            </div>
             <motion.div
               className="grid grid-rows-2 xl:grid-cols-4 gap-8"
               viewport={{ once: true, amount: 0.5 }}
@@ -223,10 +227,10 @@ export default function Home() {
                     <strong>
                       <a
                         target="_blank"
-                        href="https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html"
+                        href="https://api-picpay.2fs.com.br/swagger-ui/index.html"
                         className="flex items-center"
                       >
-                        https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html
+                        https://api-picpay.2fs.com.br/swagger-ui/index.html
                         <span className="ml-2">
                           <ExternalLink />
                         </span>
@@ -242,10 +246,10 @@ export default function Home() {
                     <strong>
                       <a
                         target="_blank"
-                        href="https://api-desafio-picpay-production.up.railway.app/"
+                        href="https://api-picpay.2fs.com.br/"
                         className="flex items-center"
                       >
-                        https://api-desafio-picpay-production.up.railway.app/
+                        https://api-picpay.2fs.com.br/
                         <span className="ml-2">
                           <ExternalLink />
                         </span>
@@ -283,7 +287,7 @@ export default function Home() {
                   <div className="text-md bg-orange-100 rounded-sm m-2 py-0.5 px-2 border border-black">
                     <span className="italic tracking-tight text-black">
                       http POST
-                      https://api-desafio-picpay-production.up.railway.app/signup
+                      https://api-picpay.2fs.com.br/signup
                       username=&quot;&quot; password=&quot;&quot;
                     </span>
                   </div>
@@ -298,14 +302,14 @@ export default function Home() {
                   <div className="text-md bg-orange-100 rounded-sm m-2 py-0.5 px-2 border border-black"></div>
                   <span className="italic tracking-tight">
                     http GET
-                    https://api-desafio-picpay-production.up.railway.app/wallets
+                    https://api-picpay.2fs.com.br/wallets
                     &quot;Authorization: Bearer TOKEN-SEM-ASPAS&quot;
                   </span>
                   <div />
                   <h2>1.4.POST em endpoints protegidos</h2>
                   <span className="italic tracking-tight">
                     http POST
-                    https://api-desafio-picpay-production.up.railway.app/wallets
+                    https://api-picpay.2fs.com.br/wallets
                     &quot;Authorization: Bearer TOKEN-SEM-ASPAS&quot;
                     fullname=&quot;&quot; cpf=&quot;&quot; ...
                   </span>

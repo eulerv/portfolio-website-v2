@@ -232,11 +232,11 @@ export default function Home() {
                   <div className="text-lg flex flex-row hover:bg-slate-50 my-2 py-0.5 px-0 border border-black">
                     <a
                       target="_blank"
-                      href="https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html"
+                      href="https://api-picpay.2fs.com/swagger-ui/index.html"
                       className="flex flex-row items-center text-center align-middle ml-1 "
                     >
                       <strong>
-                        https://api-desafio-picpay-production.up.railway.app/swagger-ui/index.html
+                        https://api-picpay.2fs.com/swagger-ui/index.html
                       </strong>
                       <span className="ml-2">
                         <ExternalLink />
@@ -252,10 +252,10 @@ export default function Home() {
                     <strong>
                       <a
                         target="_blank"
-                        href="https://api-desafio-picpay-production.up.railway.app/"
+                        href="https://api-picpay.2fs.com/"
                         className="flex items-center"
                       >
-                        https://api-desafio-picpay-production.up.railway.app/
+                        https://api-picpay.2fs.com/
                         <span className="ml-2">
                           <ExternalLink />
                         </span>
@@ -308,7 +308,7 @@ export default function Home() {
                   <div className="text-md bg-orange-100 rounded-sm m-2 py-0.5 px-2 border border-black">
                     <span className="italic tracking-tight text-black">
                       http POST
-                      https://api-desafio-picpay-production.up.railway.app/signup
+                      https://api-picpay.2fs.com/signup
                       username=&quot;&quot; password=&quot;&quot;
                     </span>
                   </div>
@@ -323,7 +323,7 @@ export default function Home() {
                   <div className="text-md bg-orange-100 rounded-sm m-2 py-0.5 px-2 border border-black">
                     <span className="italic tracking-tight text-black">
                       http GET
-                      https://api-desafio-picpay-production.up.railway.app/wallets
+                      https://api-picpay.2fs.com/wallets
                       &quot;Authorization: Bearer TOKEN-SEM-ASPAS&quot;
                     </span>
                   </div>
@@ -332,7 +332,7 @@ export default function Home() {
                   <div className="text-md bg-orange-100 rounded-sm m-2 py-0.5 px-2 border border-black">
                     <span className="italic tracking-tight text-black">
                       http POST
-                      https://api-desafio-picpay-production.up.railway.app/wallets
+                      https://api-picpay.2fs.com/wallets
                       &quot;Authorization: Bearer TOKEN-SEM-ASPAS&quot;
                       fullname=&quot;&quot; cpf=&quot;&quot; ...
                     </span>

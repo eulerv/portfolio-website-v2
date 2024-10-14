@@ -23,16 +23,14 @@ export default function RequestCard({
 }: RequestCardProps) {
   const [response, setResponse] = useState<string | null>(null);
 
-  // Remove o token do formData para não enviá-lo no corpo da requisição
   const { token, ...requestData } = formData || {};
 
-  // Converte requestData para string JSON formatada
   const requestDataString = requestData
     ? JSON.stringify(requestData, null, 2)
     : "{\n\n}";
 
   const httpsAgent = new https.Agent({
-    rejectUnauthorized: false, // Ignora a verificação SSL
+    rejectUnauthorized: false, //Ignorar a verificação ssl
   });
 
   const handleSendRequest = async () => {
@@ -92,7 +90,7 @@ export default function RequestCard({
         <button
           className="px-4 py-2 bg-yellow-600 bg-opacity-80 text-white font-semibold rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-highlightButton focus:ring-opacity-75"
           onClick={handleSendRequest}
-          disabled={!formData} // Desabilita o botão se formData não estiver disponível
+          disabled={!formData}
         >
           Enviar {method}
         </button>
