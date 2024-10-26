@@ -56,12 +56,11 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-slate-600 via-black to-slate-800 shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <Coffee />
-                <h3 className="mb-4 mt-2 text-base font-semibold">
-                  Java Core
-                </h3>
+                <h3 className="mb-4 mt-2 text-base font-semibold">Java Core</h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
                   Tenho uma base sólida nos estudos em Java Core, com
                   conhecimento em conceitos fundamentais como orientação a
@@ -82,16 +81,18 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-emerald-950 via-black to-black shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <Braces />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
                   JavaScript e React
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
                   Embora meu foco seja backend, adquiri habilidades básicas em
-                  JavaScript e React para interagir com APIs e construir este portfólio. Consigo criar
-                  pequenas aplicações front-end para testar e consumir APIs, e compreender o básico de funções
+                  JavaScript e React para interagir com APIs e construir este
+                  portfólio. Consigo criar pequenas aplicações front-end para
+                  testar e consumir APIs, e compreender o básico de funções
                   javascript e Tailwind CSS.
                 </p>
               </div>
@@ -107,15 +108,19 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-slate-600 via-black to-slate-800 shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <DatabaseZap />
-                <h3 className="mb-4 mt-2 text-base font-semibold">Bancos de dados</h3>
+                <h3 className="mb-4 mt-2 text-base font-semibold">
+                  Bancos de dados
+                </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Trabalhei usando MySQL na última posição ocupada,criando scripts de schemas
-                  e executando comandos não tão complexos, mas com grandes quantidades de dados e
-                  lidando com bancos antigos e novos. Nos estudos aprendi Postgresql e H2, que constam
-                  nas APIs deste portfólio.
+                  Trabalhei usando MySQL na última posição ocupada,criando
+                  scripts de schemas e executando comandos não tão complexos,
+                  mas com grandes quantidades de dados e lidando com bancos
+                  antigos e novos. Nos estudos aprendi Postgresql e H2, que
+                  constam nas APIs deste portfólio.
                 </p>
               </div>
             </div>
@@ -130,18 +135,20 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-emerald-950 via-black to-black shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <Shell />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
                   Git e Github
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Conforme avancei nos estudos, fui entendendo melhor como lidar com o Git e Github,
-                  compreendo o versionamento de código, como trabalhar com branches, não tanto pull requests pois
-                  não tenho a vivência de trabalhar com um time ainda.
-                  <br/>
-                  <br/>
+                  Conforme avancei nos estudos, fui entendendo melhor como lidar
+                  com o Git e Github, compreendo o versionamento de código, como
+                  trabalhar com branches, não tanto pull requests pois não tenho
+                  a vivência de trabalhar com um time ainda.
+                  <br />
+                  <br />
                 </p>
               </div>
             </div>
@@ -156,17 +163,20 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-slate-600 via-black to-slate-800 shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <Truck />
                 <h3 className="mb-4 mt-2 text-base font-semibold">
                   Metodologias Ágeis
                 </h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                Tenho também noções do funcionamento das metodologias ágeis,
-                 participei de algumas daylies e calls com time e clientes no meu emprego anterior.
-                 Entendo o papel do scrum master e P.O. como teoria, e da maneira como funciona o tratamento das demandas,
-                 conversão das regras de negócios em código, atribuição de tempo necessário de features, entre outras.
+                  Tenho também noções do funcionamento das metodologias ágeis,
+                  participei de algumas daylies e calls com time e clientes no
+                  meu emprego anterior. Entendo o papel do scrum master e P.O.
+                  como teoria, e da maneira como funciona o tratamento das
+                  demandas, conversão das regras de negócios em código,
+                  atribuição de tempo necessário de features, entre outras.
                 </p>
               </div>
             </div>
@@ -181,16 +191,17 @@ export default function HomeDiv2() {
               },
             }}
           >
-            <div className="rounded-[30px] border border-tertiary bg-gradient-to-br from-emerald-950 via-black to-black shadow-lg shadow-black">
-              <div className="rounded-r-[25px] bg-slate-100 bg-opacity-90 p-8 ml-8 m-1 shadow-lg shadow-black">
+            <div className="relative">
+              <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-[30px] bg-black"></div>
+              <div className="relative rounded-[30px] bg-orange-50 bg-opacity-90 p-8 shadow-lg hover:-translate-x-[3px] hover:-translate-y-[3px]">
                 <Speech />
-                <h3 className="mb-4 mt-2 text-base font-semibold">
-                  Spring
-                </h3>
+                <h3 className="mb-4 mt-2 text-base font-semibold">Spring</h3>
                 <p className="mb-4 text-sm font-light leading-[175%]">
-                  Utilizei o Spring Boot para desenvolver as APIs que estão aqui, e também
-                  outros elementos do ecossistema, para persistência de dados, autenticação, envio de emails, jobs...
-                  Estou explorando no momento microservices, kafka e uso e controle de threads, para a próxima API.
+                  Utilizei o Spring Boot para desenvolver as APIs que estão
+                  aqui, e também outros elementos do ecossistema, para
+                  persistência de dados, autenticação, envio de emails, jobs...
+                  Estou explorando no momento microservices, kafka e uso e
+                  controle de threads, para a próxima API.
                 </p>
               </div>
             </div>
