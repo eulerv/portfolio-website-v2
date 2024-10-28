@@ -19,7 +19,7 @@ const HomeDiv1: React.FC = () => {
           Euler Vicente
         </h1>
         <p className="mb-6 text-pretty tracking-tight">
-          Iniciei recentemente as jornada no mundo do desenvolvimento, criando
+          Iniciei recentemente a jornada no mundo do desenvolvimento, criando
           aplicações com spring e react disponíveis aqui, apesar de ter há um
           bom tempo toda a base de lógica de programação e noções de arquitetura
           de soluções vindas das vivências da faculdade e do trabalho. Tenho 5
