@@ -15,19 +15,21 @@ export default function HomeDiv3() {
           Também tenho interesse e estudo paralelamente
         </h2>
         <h1 className="pb-6 text-4xl font-bold md:text-6xl 2xl:text-6xl">
-          Python, machine learning, análise de dados
+          Python, LLMs, langchain e afins
         </h1>
         <p className="mb-6">
-          Enfim, gosto de desafios, de aprender coisas novas, a curiosidade nos trouxe até aqui não é mesmo? :D
+          Enfim, gosto de desafios, de aprender coisas novas, a curiosidade nos
+          trouxe até aqui não é mesmo? :D
           <br />
-          Ah, e resido orgulhosamente na cidade de Igrejinha no RS, e tenho forte embasamento na matemática, por já ter
-          completado 5 semestres de engenharia.
+          Ah, e resido orgulhosamente na cidade de Igrejinha no RS, e tenho
+          forte embasamento na matemática, por já ter completado 5 semestres de
+          engenharia.
           <br />
-          Ps: Sei que este front é bem básico mesmo, como me dedico ao
-              backend, adoraria sugestões de melhorias! Se deseja contribuir
-              melhorando esse front, pode enviar mensagens pelas redes, ou clicar no ícone do Github lá na
-              navbar para conferir o repo, fico extremamente grato a quem quiser ajudar no meu
-              crescimento.
+          Ps: Este projeto ainda está em construção, adoraria sugestões de
+          melhorias! Se deseja contribuir melhorando esse front, pode me enviar
+          mensagens pelas redes, ou clicar no ícone do Github lá na navbar para
+          conferir o repo, fico extremamente grato a quem quiser ajudar no meu
+          crescimento.
         </p>
 
         <h2 className="pb-2 text-xl font-semibold">Cheers!</h2>
@@ -42,9 +44,9 @@ export default function HomeDiv3() {
         whileInView={{ opacity: 1, x: 0 }}
       >
         <div>
-              <h2 className="pb-2 text-xl font-semibold">
-                Agora você pode clicar aqui para ir até a aba de
-              </h2>
+          <h2 className="pb-2 text-xl font-semibold">
+            Agora você pode clicar aqui para ir até a aba de
+          </h2>
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-6 font-aleo">
             <div className="flex flex-col w-full text-left">
               <a
@@ -52,21 +54,19 @@ export default function HomeDiv3() {
                 className="flex-grow-0 text-4xl font-bold md:text-8xl 2xl:text-8xl"
               >
                 <h1 className="absolute blur-[30px] text-slate-50 translate-x-1 translate-y-1">
-                Contato
+                  Contato
                 </h1>
                 Contato
               </a>
             </div>
-            
           </div>
           <p className="my-6 font-aleo">
-            Assim podemos conversar via e-mail/Whatsapp/Linkedin. Também tem os ícones no topo da página,
-            do Linkedin e Github.
+            Assim podemos conversar via e-mail/Whatsapp/Linkedin. Também tem os
+            ícones no topo da página, do Linkedin e Github.
             <br />
-            E segue aqui abaixo o meu currículo disponível para download no Drive:
-              
-              <br /> <br />
-            
+            E segue aqui abaixo o meu currículo disponível para download no
+            Drive:
+            <br /> <br />
             <br />
           </p>
         </div>
@@ -82,9 +82,10 @@ export default function HomeDiv3() {
            flex items-center justify-center divide-x divide-gray-600
            "
           >
-            <a className="text-gray-100 font-aleo flex items-center space-x-5 pr-6"
-            href="https://drive.google.com/file/d/15Xl3yOhm00zYNwk7XR1BW6JSa43FYfU2/view?usp=drive_link"
-            target="_blank"
+            <a
+              className="text-gray-100 font-aleo flex items-center space-x-5 pr-6"
+              href="https://drive.google.com/file/d/15Xl3yOhm00zYNwk7XR1BW6JSa43FYfU2/view?usp=drive_link"
+              target="_blank"
             >
               Clique para fazer o download do meu currículo atualizado
             </a>

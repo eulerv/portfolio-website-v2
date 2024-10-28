@@ -11,7 +11,7 @@ const HomeDiv1: React.FC = () => {
          text-center font-aleo lg:text-left shadow-lg rounded-md shadow-black"
         viewport={{ once: true, amount: 0.5 }}
         initial={{ opacity: 0, x: -20, y: -100 }}
-        transition={{ type: "spring", stiffness: 50, duration: 7}}
+        transition={{ type: "spring", stiffness: 50, duration: 7 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
       >
         <h2 className="pb-2 text-xl font-semibold">Meu nome &eacute;</h2>
@@ -19,13 +19,16 @@ const HomeDiv1: React.FC = () => {
           Euler Vicente
         </h1>
         <p className="mb-6 text-pretty tracking-tight">
-          Sou um desenvolvedor back end Java, apesar de não ter trabalhado efetivamente como dev, gosto muito das caracter&iacute;sticas dessa linguagem e do spring framework,
-          e apesar de ter conhecimento em outras tecnologias, busco constante
-          aprimoramento e especializa&ccedil;&atilde;o nela nas mais variadas fontes.
-          Tenho 5 anos de experiência diretamente em contato com tecnologia, prestando suporte para sistemas de
-          controle de ponto e estacionamentos, e agora é o momento de migrar definitivamente para o desenvolvimento de software.
-          Este &eacute; meu portfolio, espero conseguir demonstrar minhas habilidades no momento :D
-           <br /> <br />
+          Iniciei recentemente as jornada no mundo do desenvolvimento, criando
+          aplicações com spring e react disponíveis aqui, apesar de ter há um
+          bom tempo toda a base de lógica de programação e noções de arquitetura
+          de soluções vindas das vivências da faculdade e do trabalho. Tenho 5
+          anos de experiência diretamente em contato com tecnologia, prestando
+          suporte para sistemas de controle de ponto e estacionamentos, e agora
+          é o momento de migrar definitivamente para o desenvolvimento de
+          software. Este é meu portfolio, espero conseguir demonstrar
+          minhas habilidades no momento :D
+          <br /> <br />
           <span className="italic tracking-tight">
             &quot;Sem sonhos, a vida n&atilde;o tem brilho. Sem metas, os sonhos
             n&atilde;o tem alicerces. Sem prioridades, os sonhos n&atilde;o se
