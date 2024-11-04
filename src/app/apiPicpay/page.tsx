@@ -278,7 +278,7 @@ export default function Home() {
                       <strong>
                         <a
                           target="_blank"
-                          href="https:github.com/eulerv/api-desafio-picpay"
+                          href="https://github.com/eulerv/api-desafio-picpay"
                           className="flex items-center"
                         >
                           https://github.com/eulerv/api-desafio-picpay

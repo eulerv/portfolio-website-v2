@@ -84,7 +84,7 @@ export default function HomeDiv3() {
           >
             <a
               className="text-gray-100 font-aleo flex items-center space-x-5 pr-6"
-              href="https://drive.google.com/file/d/15Xl3yOhm00zYNwk7XR1BW6JSa43FYfU2/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1osYB18sHrNCABuNV-YZhr9GeVETp8Bge/view?usp=sharing"
               target="_blank"
             >
               Clique para fazer o download do meu currículo atualizado
